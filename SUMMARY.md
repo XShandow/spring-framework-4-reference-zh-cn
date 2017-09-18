@@ -11,6 +11,9 @@ This is the summary of my book.
 			* [2.2.1 核心容器](I. Overview of Spring Framework/2.2.1. Core Container.md)
 			* [2.2.2 AOP和Instrumentation](I. Overview of Spring Framework/2.2.2. AOP and Instrumentation.md)
 			* [2.2.3 消息](I. Overview of Spring Framework/2.2.3. Messaging.md)
+			* [2.2.4 数据访问/集成](I. Overview of Spring Framework/2.2.4. Data Access and Integration.md)
+			* [2.2.5 Web](I. Overview of Spring Framework/2.2.5. Web.md)
+			* [2.2.6 测试](I. Overview of Spring Framework/2.2.6. Test.md)
 
 
 
