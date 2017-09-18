@@ -8,7 +8,7 @@ This is the summary of my book.
 	* [2.介绍 Spring Framework](I. Overview of Spring Framework/2. Introduction to the Spring Framework.md)
 		* [2.1. 依赖注入和控制反转](I. Overview of Spring Framework/2.1. Dependency Injection and Inversion of Control.md)
 		* [2.2. 模块](I. Overview of Spring Framework/2.2. Modules.md)
-			* [2.2.1 模块](I. Overview of Spring Framework/2.2. Modules.md)
+			* [2.2.1 核心容器](I. Overview of Spring Framework/2.2.1. Core Container.md)
 			* [2.2.1 模块](I. Overview of Spring Framework/2.2. Modules.md)
 
 		* [2.3. 使用场景](I. Overview of Spring Framework/2.3. Usage scenarios.md)
