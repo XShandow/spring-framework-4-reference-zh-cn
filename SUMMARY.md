@@ -14,9 +14,6 @@ This is the summary of my book.
 			* [2.2.4 数据访问/集成](I. Overview of Spring Framework/2.2.4. Data Access and Integration.md)
 			* [2.2.5 Web](I. Overview of Spring Framework/2.2.5. Web.md)
 			* [2.2.6 测试](I. Overview of Spring Framework/2.2.6. Test.md)
-
-
-
 		* [2.3. 使用场景](I. Overview of Spring Framework/2.3. Usage scenarios.md)
 * II. Spring Framework 4.x 新特性
 	* [3.Spring Framework 4.0中的新功能和增强功能](II. What’s New in Spring Framework 4.x/3. New Features and Enhancements in Spring Framework 4.0.md)
