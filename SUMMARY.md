@@ -9,7 +9,10 @@ This is the summary of my book.
 		* [2.1. 依赖注入和控制反转](I. Overview of Spring Framework/2.1. Dependency Injection and Inversion of Control.md)
 		* [2.2. 模块](I. Overview of Spring Framework/2.2. Modules.md)
 			* [2.2.1 核心容器](I. Overview of Spring Framework/2.2.1. Core Container.md)
-			* [2.2.1 模块](I. Overview of Spring Framework/2.2. Modules.md)
+			* [2.2.2 AOP和Instrumentation](I. Overview of Spring Framework/2.2.2. AOP and Instrumentation.md)
+			* [2.2.3 消息](I. Overview of Spring Framework/2.2.3. Messaging.md)
+
+
 
 		* [2.3. 使用场景](I. Overview of Spring Framework/2.3. Usage scenarios.md)
 * II. Spring Framework 4.x 新特性
