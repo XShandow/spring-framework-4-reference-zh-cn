@@ -5,5 +5,5 @@ Spring is designed to be non-intrusive, meaning that your domain logic code gene
 Spring 的设计是非侵入性的，也就是说你的领域逻辑代码通常不依赖框架本身。在你的集成层（如数据访问层），对数据访问技术和 Spring 的库一些依赖会存在。然而，它应该很容易从你的剩余代码中分离这些依赖。
 
 This document is a reference guide to Spring Framework features. If you have any requests, comments, or questions on this document, please post them on the user mailing list. Questions on the Framework itself should be asked on StackOverflow \(see [https://spring.io/questions](https://spring.io/questions)\).  
-本文档是 Spring Framework 功能的参考指南。如果你有关于这个文档的任何要求，意见或问题，请发送到用户邮件列表。对 Framework 本身的问题应该到 StackOverflow 请问（见[https://spring.io/questions）](https://spring.io/questions）)
+本文档是 Spring Framework 特性的参考指南。如果你有关于这个文档的任何要求，意见或问题，请发送到用户邮件列表。对 Framework 本身的问题应该到 StackOverflow 请问（见[https://spring.io/questions）](https://spring.io/questions）)
 
