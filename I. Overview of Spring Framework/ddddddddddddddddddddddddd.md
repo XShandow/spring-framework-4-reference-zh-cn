@@ -11,9 +11,10 @@ Each release of the Spring Framework will publish artifacts to the following pla
 
 * Maven Central, which is the default repository that Maven queries, and does not require any special configuration to use. Many of the common libraries that Spring depends on also are available from Maven Central and a large section of the Spring community uses Maven for dependency management, so this is convenient for them. The names of the jars here are in the form`spring-*-<version>.jar`and the Maven groupId is`org.springframework`.
 
-* MavenCentral（Maven中央库），这是Maven查询的默认库，而不需要任何特殊的配置就能使用。许多常用的Spring的依赖库也存在与MavenCentral，并且Spring社区的很大一部分都使用Maven进行依赖管理，所以这是最方便他们的。jar命名格式是spring-\*-.jar，MavengroupId是org.springframework
+* MavenCentral（Maven中央库），这是Maven查询的默认库，而不需要任何特殊的配置就能使用。许多常用的Spring的依赖库也存在与MavenCentral，并且Spring社区的很大一部分都使用Maven进行依赖管理，所以这是最方便他们的。jar命名格式是spring-\*-.jar，MavengroupId是org.springframework。
 
 * In a public Maven repository hosted specifically for Spring. In addition to the final GA releases, this repository also hosts development snapshots and milestones. The jar file names are in the same form as Maven Central, so this is a useful place to get development versions of Spring to use with other libraries deployed in Maven Central. This repository also contains a bundle distribution zip file that contains all Spring jars bundled together for easy download.So the first thing you need to decide is how to manage your dependencies: we generally recommend the use of an automated system like Maven, Gradle or Ivy, but you can also do it manually by downloading all the jars yourself.
+
 * 公共 Maven 仓库还拥有 Spring 专有的库。除了最终的 GA 版本，这个库还保存开发的快照和里程碑。JAR 文件的名字是和 Maven Central 相同的形式，所以这是让 Spring 的开发版本使用其它部署在 Maven Central 库的一个有用的地方。该库还包含一个用于发布的 zip 文件包含所有Spring jar，方便下载。所以首先，你要决定用什么方式管理你的依赖，通常建议你使用自动系统像 Maven, Gradle 或 Ivy, 当然你也可以下载 jar
 
 Below you will find the list of Spring artifacts. For a more complete description of each module, see Section 2.2, “Framework Modules”.  
@@ -21,8 +22,8 @@ Below you will find the list of Spring artifacts. For a more complete descriptio
 
 **Table2.1.SpringFrameworkArtifacts**
 
-**SpringDependenciesandDependingonSpring**  
-Spring 的依赖以及基于 Spring
+**SpringDependenciesandDependingonSpring  
+**Spring 的依赖以及基于 Spring
 
 Although Spring provides integration and support for a huge range of enterprise and other external tools, it intentionally keeps its mandatory dependencies to an absolute minimum: you shouldn’t have to locate and download \(even automatically\) a large number of jar libraries in order to use Spring for simple use cases. For basic dependency injection there is only one mandatory external dependency, and that is for logging \(see below for a more detailed description of logging options\).  
 虽然 Spring 提供了集成在一个大范围的企业和其他外部工具的支持，它故意保持其强制性依赖关系降到最低：在简单的用例里，你无需查找并下载（甚至自动）一大批 jar 库来使用 Spring 。基本的依赖注入只有一个外部强制性的依赖，这是用来做日志的（见下面更详细地描述日志选项）。
@@ -30,8 +31,8 @@ Although Spring provides integration and support for a huge range of enterprise 
 Next we outline the basic steps needed to configure an application that depends on Spring, first with Maven and then with Gradle and finally using Ivy. In all cases, if anything is unclear, refer to the documentation of your dependency management system, or look at some sample code - Spring itself uses Gradle to manage dependencies when it is building, and our samples mostly use Gradle or Maven.  
 接下来我们将一步步展示如果配置依赖 Spring 的程序，首先用 Maven 然后用 Gradle 和最后用 Ivy。在所有的情况下，如果有不清楚的地方，查看的依赖性管理系统的文档，或看一些示例代码。Spring 本身是使用 Gradle 来管理依赖的，我们的很多示例也是使用 Gradle 或 Maven。
 
-**MavenDependencyManagement**  
-Maven 依赖管理
+**MavenDependencyManagement  
+**Maven 依赖管理
 
 If you are using Maven for dependency management you don’t even need to supply the logging dependency explicitly. For example, to create an application context and use dependency injection to configure an application, your Maven dependencies will look like this:  
 如果您使用的是 Maven 的依赖管理你甚至不需要明确提供日志依赖。例如，要创建一个应用程序的上下文和使用依赖注入来配置应用程序，你的Maven 依赖将看起来像这样：
@@ -217,7 +218,7 @@ true
 >
 ```
 
-**Maven"BillOfMaterials"Dependency  
+**Maven"BillOfMaterials"Dependency    
 **Maven "Bill Of Materials" 依赖
 
 It is possible to accidentally mix different versions of Spring JARs when using Maven. For example, you may find that a third-party library, or another Spring project, pulls in a transitive dependency to an older release. If you forget to explicitly declare a direct dependency yourself, all sorts of unexpected issues can arise.  
@@ -334,7 +335,7 @@ dependencies
 >
 ```
 
-**GradleDependencyManagement  
+**GradleDependencyManagement    
 **Gradle 依赖管理
 
 To use the Spring repository with the Gradle build system, include the appropriate URL in the`repositories`section:  
@@ -366,7 +367,7 @@ dependencies {
 }
 ```
 
-**IvyDependencyManagement  
+**IvyDependencyManagement    
 **Ivy 依赖管理
 
 If you prefer to use Ivy to manage dependencies then there are similar configuration options.  
@@ -403,7 +404,7 @@ runtime"/
 >
 ```
 
-**DistributionZipFiles  
+**DistributionZipFiles    
 **分发的 zip 文件
 
 Although using a build system that supports dependency management is the recommended way to obtain the Spring Framework, it is still possible to download a distribution zip file.  
