@@ -200,4 +200,6 @@ Although using a build system that supports dependency management is the recomme
 Distribution zips are published to the Spring Maven Repository (this is just for our convenience, you don’t need Maven or any other build system in order to download them).
 分发的 zip 文件是发布到 Spring Maven Repository （这是为了我们的便利，在下载这些文件的时候你不需要 Maven 或者其他的构建系统）。
 
+To download a distribution zip open a web browser to http://repo.spring.io/release/org/springframework/spring and select the appropriate subfolder for the version that you want. Distribution files end `-dist.zip`, for example spring-framework-{spring-version}-RELEASE-dist.zip. Distributions are also published for milestones and snapshots.
+下载一个 Zip，在web 浏览器打开 http://repo.spring.io/release/org/springframework/spring ，选择适当的文件夹的版本。下载完毕文件结尾是 -dist.zip，例如， spring-framework-{spring-version}-RELEASE-dist.zip 。分发也支持发布里程碑和快照。
 
