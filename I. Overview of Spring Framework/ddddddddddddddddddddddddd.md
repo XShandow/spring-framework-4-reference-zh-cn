@@ -1,0 +1,417 @@
+### 2.3.1DependencyManagementandNamingConventions依赖关系管理和命名约定
+
+Dependency management and dependency injection are different things. To get those nice features of Spring into your application \(like dependency injection\) you need to assemble all the libraries needed \(jar files\) and get them onto your classpath at runtime, and possibly at compile time. These dependencies are not virtual components that are injected, but physical resources in a file system \(typically\). The process of dependency management involves locating those resources, storing them and adding them to classpaths. Dependencies can be direct \(e.g. my application depends on Spring at runtime\), or indirect \(e.g. my application depends on`commons-dbcp`which depends on`commons-pool`\). The indirect dependencies are also known as "transitive" and it is those dependencies that are hardest to identify and manage.  
+依赖管理和依赖注入是不同的概念。为了让 Spring 的这些不错的功能运用到运用程序中（比如依赖注入），你需要收集所有的需要的库（JAR文件），并且在编译、运行的时候将它们放到你的类路径中。这些依赖不是虚拟组件的注入，而是物理的资源在文件系统中（通常）。依赖管理过程包括定位这些资源，存储它们并添加它们到类路径。依赖可以是直接（如我的应用程序运行时依赖于 Spring ），或者是间接（如我的应用程序依赖 commons-dbcp ，而 commons-dbcp 又依赖于 commons-pool）。间接的依赖也被称为 “transitive （传递）”，它是最难识别和管理的依赖。
+
+If you are going to use Spring you need to get a copy of the jar libraries that comprise the pieces of Spring that you need. To make this easier Spring is packaged as a set of modules that separate the dependencies as much as possible, so for example if you don’t want to write a web application you don’t need the spring-web modules. To refer to Spring library modules in this guide we use a shorthand naming convention`spring-*`or`spring-*.jar`, where`*`represents the short name for the module \(e.g.`spring-core`,`spring-webmvc`,`spring-jms`, etc.\). The actual jar file name that you use is normally the module name concatenated with the version number \(e.g. spring-core-4.3.11.RELEASE.jar\).  
+如果你将使用 Spring，你需要复制哪些包含你需要的 Spring 功能的 jar包。为了使这个过程更加简单，Spring 被打包为一组模块，这些模块尽可能多的分开依赖关系。例如，如果不想写一个 web 应用程序，你就不需要引入 Spring-web 模块。为了在本指南中标记 Spring 库模块我们使用了速记命名约定 spring- 或者 spring-.jar ，其中\*代表模块的短名（比如 spring-core,spring-webmvc, spring-jms 等）。实际的jar 文件的名字，通常是用模块名字和版本号级联（如 spring-core-4.3.0.RELEASE.jar）
+
+Each release of the Spring Framework will publish artifacts to the following places:  
+每个 Spring Framework 发行版本将会放到下面的位置：
+
+* Maven Central, which is the default repository that Maven queries, and does not require any special configuration to use. Many of the common libraries that Spring depends on also are available from Maven Central and a large section of the Spring community uses Maven for dependency management, so this is convenient for them. The names of the jars here are in the form`spring-*-<version>.jar`and the Maven groupId is`org.springframework`.
+
+* MavenCentral（Maven中央库），这是Maven查询的默认库，而不需要任何特殊的配置就能使用。许多常用的Spring的依赖库也存在与MavenCentral，并且Spring社区的很大一部分都使用Maven进行依赖管理，所以这是最方便他们的。jar命名格式是spring-\*-.jar，MavengroupId是org.springframework
+
+* In a public Maven repository hosted specifically for Spring. In addition to the final GA releases, this repository also hosts development snapshots and milestones. The jar file names are in the same form as Maven Central, so this is a useful place to get development versions of Spring to use with other libraries deployed in Maven Central. This repository also contains a bundle distribution zip file that contains all Spring jars bundled together for easy download.So the first thing you need to decide is how to manage your dependencies: we generally recommend the use of an automated system like Maven, Gradle or Ivy, but you can also do it manually by downloading all the jars yourself.
+* 公共 Maven 仓库还拥有 Spring 专有的库。除了最终的 GA 版本，这个库还保存开发的快照和里程碑。JAR 文件的名字是和 Maven Central 相同的形式，所以这是让 Spring 的开发版本使用其它部署在 Maven Central 库的一个有用的地方。该库还包含一个用于发布的 zip 文件包含所有Spring jar，方便下载。所以首先，你要决定用什么方式管理你的依赖，通常建议你使用自动系统像 Maven, Gradle 或 Ivy, 当然你也可以下载 jar
+
+Below you will find the list of Spring artifacts. For a more complete description of each module, see Section 2.2, “Framework Modules”.  
+下面是 Spring 中的组件列表。更多描述，详见2.2. Modules （模块）
+
+**Table2.1.SpringFrameworkArtifacts**
+
+**SpringDependenciesandDependingonSpring**  
+Spring 的依赖以及基于 Spring
+
+Although Spring provides integration and support for a huge range of enterprise and other external tools, it intentionally keeps its mandatory dependencies to an absolute minimum: you shouldn’t have to locate and download \(even automatically\) a large number of jar libraries in order to use Spring for simple use cases. For basic dependency injection there is only one mandatory external dependency, and that is for logging \(see below for a more detailed description of logging options\).  
+虽然 Spring 提供了集成在一个大范围的企业和其他外部工具的支持，它故意保持其强制性依赖关系降到最低：在简单的用例里，你无需查找并下载（甚至自动）一大批 jar 库来使用 Spring 。基本的依赖注入只有一个外部强制性的依赖，这是用来做日志的（见下面更详细地描述日志选项）。
+
+Next we outline the basic steps needed to configure an application that depends on Spring, first with Maven and then with Gradle and finally using Ivy. In all cases, if anything is unclear, refer to the documentation of your dependency management system, or look at some sample code - Spring itself uses Gradle to manage dependencies when it is building, and our samples mostly use Gradle or Maven.  
+接下来我们将一步步展示如果配置依赖 Spring 的程序，首先用 Maven 然后用 Gradle 和最后用 Ivy。在所有的情况下，如果有不清楚的地方，查看的依赖性管理系统的文档，或看一些示例代码。Spring 本身是使用 Gradle 来管理依赖的，我们的很多示例也是使用 Gradle 或 Maven。
+
+**MavenDependencyManagement**  
+Maven 依赖管理
+
+If you are using Maven for dependency management you don’t even need to supply the logging dependency explicitly. For example, to create an application context and use dependency injection to configure an application, your Maven dependencies will look like this:  
+如果您使用的是 Maven 的依赖管理你甚至不需要明确提供日志依赖。例如，要创建一个应用程序的上下文和使用依赖注入来配置应用程序，你的Maven 依赖将看起来像这样：
+
+```
+<
+dependencies
+>
+<
+dependency
+>
+<
+groupId
+>
+org.springframework
+<
+/groupId
+>
+<
+artifactId
+>
+spring-context
+<
+/artifactId
+>
+<
+version
+>
+4.3.0.RELEASE
+<
+/version
+>
+<
+scope
+>
+runtime
+<
+/scope
+>
+<
+/dependency
+>
+<
+/dependencies
+>
+```
+
+That’s it. Note the scope can be declared as runtime if you don’t need to compile against Spring APIs, which is typically the case for basic dependency injection use cases.  
+就是它。注意 scope 可声明为 runtime （运行时）如果你不需要编译 Spring 的API，这通常是基本的依赖注入使用的案例。
+
+The example above works with the Maven Central repository. To use the Spring Maven repository \(e.g. for milestones or developer snapshots\), you need to specify the repository location in your Maven configuration. For full releases:  
+以上与 Maven Central 存储库工程实例。使用 Spring Maven 存储库（如里程碑或开发者快照），你需要在你的 Maven 配置指定的存储位置。如下：
+
+```
+<
+repositories
+>
+<
+repository
+>
+<
+id
+>
+io.spring.repo.maven.release
+<
+/id
+>
+<
+url
+>
+http://repo.spring.io/release/
+<
+/url
+>
+<
+snapshots
+>
+<
+enabled
+>
+false
+<
+/enabled
+>
+<
+/snapshots
+>
+<
+/repository
+>
+<
+/repositories
+>
+```
+
+For milestones:  
+里程碑：
+
+```
+<
+repositories
+>
+<
+repository
+>
+<
+id
+>
+io.spring.repo.maven.milestone
+<
+/id
+>
+<
+url
+>
+http://repo.spring.io/milestone/
+<
+/url
+>
+<
+snapshots
+>
+<
+enabled
+>
+false
+<
+/enabled
+>
+<
+/snapshots
+>
+<
+/repository
+>
+<
+/repositories
+>
+```
+
+And for snapshots:  
+以及快照：
+
+```
+<
+repositories
+>
+<
+repository
+>
+<
+id
+>
+io.spring.repo.maven.snapshot
+<
+/id
+>
+<
+url
+>
+http://repo.spring.io/snapshot/
+<
+/url
+>
+<
+snapshots
+>
+<
+enabled
+>
+true
+<
+/enabled
+>
+<
+/snapshots
+>
+<
+/repository
+>
+<
+/repositories
+>
+```
+
+**Maven"BillOfMaterials"Dependency  
+**Maven "Bill Of Materials" 依赖
+
+It is possible to accidentally mix different versions of Spring JARs when using Maven. For example, you may find that a third-party library, or another Spring project, pulls in a transitive dependency to an older release. If you forget to explicitly declare a direct dependency yourself, all sorts of unexpected issues can arise.  
+有可能不小心使用不同版本的 Spring JAR 在使用 Maven 时。例如，你可能发现一个第三方的库，或另一 Spring 的项目，拉取了一个在传递依赖较早的发布包。如果你自己忘记了显式声明一个直接依赖，各种意想不到的问题出现。
+
+To overcome such problems Maven supports the concept of a "bill of materials" \(BOM\) dependency. You can import the`spring-framework-bom`in your`dependencyManagement`section to ensure that all spring dependencies \(both direct and transitive\) are at the same version.  
+为了克服这些问题，Maven 支持 "bill of materials" \(BOM\) 的依赖的概念。你可以在你的 dependencyManagement 部分引入 spring-framework-bom 来确保所有 spring依赖（包括直接和传递的）是同一版本。
+
+```
+<
+dependencyManagement
+>
+<
+dependencies
+>
+<
+dependency
+>
+<
+groupId
+>
+org.springframework
+<
+/groupId
+>
+<
+artifactId
+>
+spring-framework-bom
+<
+/artifactId
+>
+<
+version
+>
+4.3.11.RELEASE
+<
+/version
+>
+<
+type
+>
+pom
+<
+/type
+>
+<
+scope
+>
+import
+<
+/scope
+>
+<
+/dependency
+>
+<
+/dependencies
+>
+<
+/dependencyManagement
+>
+```
+
+An added benefit of using the BOM is that you no longer need to specify the`<version>`attribute when depending on Spring Framework artifacts:  
+使用 BOM 后，当依赖 Spring Framework 组件后，无需指定`<version>`属性
+
+```
+<
+dependencies
+>
+<
+dependency
+>
+<
+groupId
+>
+org.springframework
+<
+/groupId
+>
+<
+artifactId
+>
+spring-context
+<
+/artifactId
+>
+<
+/dependency
+>
+<
+dependency
+>
+<
+groupId
+>
+org.springframework
+<
+/groupId
+>
+<
+artifactId
+>
+spring-web
+<
+/artifactId
+>
+<
+/dependency
+>
+<
+dependencies
+>
+```
+
+**GradleDependencyManagement  
+**Gradle 依赖管理
+
+To use the Spring repository with the Gradle build system, include the appropriate URL in the`repositories`section:  
+用 Gradle 来使用 Spring ,在 repositories 中填入适当的 URL :
+
+```
+repositories 
+{
+mavenCentral
+(
+)
+// and optionally...
+
+    maven 
+{
+ url 
+"http://repo.spring.io/release"
+}
+}
+```
+
+You can change the`repositories`URL from`/release`to`/milestone`or`/snapshot`as appropriate. Once a repository has been configured, you can declare dependencies in the usual Gradle way:  
+可以适当修改 URL 从 /release 到 /milestone 或 /snapshot 。库一旦配置，就能声明 Gradle 依赖:
+
+```
+dependencies {
+    compile("org.springframework:spring-context:4.3.11.RELEASE")
+    testCompile("org.springframework:spring-test:4.3.11.RELEASE")
+}
+```
+
+**IvyDependencyManagement  
+**Ivy 依赖管理
+
+If you prefer to use Ivy to manage dependencies then there are similar configuration options.  
+如果你更喜欢用Ivy管理依赖也有类似的配置选项。  
+To configure Ivy to point to the Spring repository add the following resolver to your`ivysettings.xml`:  
+配置 Ivy ，将指向 Spring 的库 添加下面的 resolver（解析器）到你ivysettings.xml：
+
+```
+<
+resolvers
+>
+<
+ibiblio name="io.spring.repo.maven.release"
+            m2compatible="true"
+            root="http://repo.spring.io/release/"/
+>
+<
+/resolvers
+>
+```
+
+You can change the`root`URL from`/release/`to`/milestone/`or`/snapshot/`as appropriate.  
+可以适当修改 root URL 从 /release 到 /milestone 或 /snapshot 。
+
+Once configured, you can add dependencies in the usual way. For example \(in`ivy.xml`\):  
+一旦配置，就能添加依赖，举例 \(在 ivy.xml\):
+
+```
+<
+dependency org="org.springframework"
+    name="spring-core" rev="4.3.11.RELEASE" conf="compile-
+>
+runtime"/
+>
+```
+
+**DistributionZipFiles  
+**分发的 zip 文件
+
+Although using a build system that supports dependency management is the recommended way to obtain the Spring Framework, it is still possible to download a distribution zip file.  
+虽然使用构建系统，支持依赖管理是推荐的方式获得了 Spring Framework,，它仍然是可下载分发的 zip 文件。
+
+Distribution zips are published to the Spring Maven Repository \(this is just for our convenience, you don’t need Maven or any other build system in order to download them\).  
+分发的 zip 文件是发布到 Spring Maven Repository （这是为了我们的便利，在下载这些文件的时候你不需要 Maven 或者其他的构建系统）。
+
+To download a distribution zip open a web browser to[http://repo.spring.io/release/org/springframework/spring](http://repo.spring.io/release/org/springframework/spring)and select the appropriate subfolder for the version that you want. Distribution files end`-dist.zip`, for example spring-framework-{spring-version}-RELEASE-dist.zip. Distributions are also published for milestones and snapshots.  
+下载一个 Zip，在web 浏览器打开[http://repo.spring.io/release/org/springframework/spring](http://repo.spring.io/release/org/springframework/spring)，选择适当的文件夹的版本。下载完毕文件结尾是 -dist.zip，例如， spring-framework-{spring-version}-RELEASE-dist.zip 。分发也支持发布里程碑和快照。
+
