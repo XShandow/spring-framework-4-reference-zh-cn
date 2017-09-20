@@ -58,6 +58,7 @@
     * [7.6. 定制Bean的回调函数](III. Core Technologies/7.6. Customizing the nature of a bean.md)
     * [7.7. Bean definition inheritance](III. Core Technologies/7.7. Bean definition inheritance.md)
     * [7.8. 容器扩展点](III. Core Technologies/7.8. Container Extension Points.md)
+    * [7.9. 基于声明的容器配置](III. Core Technologies/7.9. Annotation-based container configuration.md)
     * [7.10. Classpath扫描和管理组件](III. Core Technologies/7.10. Classpath scanning and managed components.md)
     * [7.11. 使用JSR 330标准注解](III. Core Technologies/7.11. Using JSR 330 Standard Annotations.md)
     * [7.12. 基于Java的容器配置](III. Core Technologies/7.12. Java-based container configuration.md)
