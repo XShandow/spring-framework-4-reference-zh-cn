@@ -55,7 +55,7 @@
     * [7.3. Bean 总览](III. Core Technologies/7.3. Bean overview.md)
     * [7.4. 依赖](III. Core Technologies/7.4. Dependencies.md)
     * [7.5. 作用域](III. Core Technologies/7.5. Bean scopes.md)
-    * [定制Bean的回调函数](III. Core Technologies/Customizing the nature of a bean.md)
+    * [7.6. 定制Bean的回调函数](III. Core Technologies/7.6. Customizing the nature of a bean.md)
     * [Bean definition inheritance](III. Core Technologies/Bean definition inheritance.md)
     * [容器扩展点](III. Core Technologies/Container Extension Points.md)
     * [Classpath扫描和管理组件](III. Core Technologies/Classpath scanning and managed components.md)
