@@ -49,8 +49,8 @@
     * [6.7. 测试改进](II. What’s New in Spring Framework 4.x/6.7. Testing Improvements.md)
     * [6.8. 新库和服务器支持](II. What’s New in Spring Framework 4.x/6.8. Support for new library and server generations.md)
 * [III. 核心技术](III. Core Technologies/README.md)
-  * IoC 容器
-    * [介绍  Spring IoC 容器和 bean](III. Core Technologies/Introduction to the Spring IoC container and beans.md)
+  * [7.IoC 容器](III. Core Technologies/7. The IoC container.md)
+    * [7.1. 介绍  Spring IoC 容器和 bean](III. Core Technologies/Introduction to the Spring IoC container and beans.md)
     * [容器总览](III. Core Technologies/Container overview.md)
     * [Bean 总览](III. Core Technologies/Bean overview.md)
     * [依赖](III. Core Technologies/Dependencies.md)
