@@ -22,7 +22,7 @@
     * [3.3. Java 8\(以及6和7\)](II. What’s New in Spring Framework 4.x/3.3. Java 8  as well as 6 and 7.md)
     * [3.4. Java EE 6 和 7](II. What’s New in Spring Framework 4.x/3.4. Java EE 6 and 7.md)
     * [3.5. Groovy Bean Definition DSL](II. What’s New in Spring Framework 4.x/3.5. Groovy Bean Definition DSL.md)
-    * [3.6. 核心容器改进](II. What’s New in Spring Framework 4.x/3.6. Core Container Improvement.md)
+    * [3.6. 核心容器改进](II. What’s New in Spring Framework 4.x/3.6. Core Container Improvements.md)
     * [3.7. 常规Web改进](II. What’s New in Spring Framework 4.x/3.7. General Web Improvements.md)
     * [3.8. WebSocket, SockJS, 和 STOMP 消息](II. What’s New in Spring Framework 4.x/3.8. WebSocket, SockJS, and STOMP Messaging.md)
     * [3.9. 测试改进](II. What’s New in Spring Framework 4.x/3.9. Testing Improvements.md)
