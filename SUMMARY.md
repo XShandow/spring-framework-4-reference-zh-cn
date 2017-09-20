@@ -63,7 +63,7 @@
     * [7.11. 使用JSR 330标准注解](III. Core Technologies/7.11. Using JSR 330 Standard Annotations.md)
     * [7.12. 基于Java的容器配置](III. Core Technologies/7.12. Java-based container configuration.md)
     * [7.13. 环境的抽象](III. Core Technologies/7.13. Environment abstraction.md)
-    * [7.14. Registering a LoadTimeWeaver](III. Core Technologies/7.14. Registering a LoadTimeWeaver.md)
+    * [7.14. 注册一个LoadTimeWeaver](III. Core Technologies/7.14. Registering a LoadTimeWeaver.md)
     * [7.15. Additional Capabilities of the ApplicationContext](III. Core Technologies/7.15. Additional Capabilities of the ApplicationContext.md)
     * [7.16. The BeanFactory](III. Core Technologies/7.16. The BeanFactory.md)
   * [6. Resources](III. Core Technologies/6. Resources.md)
