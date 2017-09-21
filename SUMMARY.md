@@ -56,6 +56,8 @@
       * [7.2.2. 实例化容器](III. Core Technologies/7.2.2. Instantiating a container.md)
       * [7.2.3. 使用容器](III. Core Technologies/7.2.3. Using the container.md)
     * [7.3. Bean 总览](III. Core Technologies/7.3. Bean overview.md)
+      * [7.3.1. 命名bean](III. Core Technologies/7.3.1. Naming beans.md)
+      * [7.3.2. 实例化bean](III. Core Technologies/7.3.2. Instantiating beans.md)
     * [7.4. 依赖](III. Core Technologies/7.4. Dependencies.md)
     * [7.5. 作用域](III. Core Technologies/7.5. Bean scopes.md)
     * [7.6. 定制Bean的回调函数](III. Core Technologies/7.6. Customizing the nature of a bean.md)
