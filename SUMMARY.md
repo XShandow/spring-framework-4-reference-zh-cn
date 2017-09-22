@@ -69,19 +69,8 @@
       * [7.5.1. 单例作用域](III. Core Technologies/7.5.1. The singleton scope.md)
       * [7.5.2. 原型作用域](III. Core Technologies/7.5.2. The prototype scope.md)
       * [7.5.3. 依赖原型bean的单例bean](III. Core Technologies/7.5.3. Singleton beans with prototype-bean dependencies.md)
-      * [7.5.4. 请求、session、全局session、application和WebSocket范围](III. Core Technologies/7.5.4. Request, session, global session, application, and WebSocket scopes.md)
+      * [7.5.4. 请求、session、全局session、application和WebSocket作用域](III. Core Technologies/7.5.4. Request, session, global session, application, and WebSocket scopes.md)
       * [7.5.5. 自定义作用域](III. Core Technologies/7.5.5. Custom scopes.md)
-
-
-
-
-
-
-
-
-
-
-
     * [7.6. 定制Bean的回调函数](III. Core Technologies/7.6. Customizing the nature of a bean.md)
     * [7.7. Bean definition inheritance](III. Core Technologies/7.7. Bean definition inheritance.md)
     * [7.8. 容器扩展点](III. Core Technologies/7.8. Container Extension Points.md)
