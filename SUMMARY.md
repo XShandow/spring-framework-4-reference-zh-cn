@@ -77,7 +77,7 @@
       * [7.6.3. 其他的Aware接口](III. Core Technologies/7.6.3. Other Aware interfaces.md)
     * [7.7. bean定义的继承](III. Core Technologies/7.7. Bean definition inheritance.md)
     * [7.8. 容器扩展点](III. Core Technologies/7.8. Container Extension Points.md)
-      * [7.8.1. 其他的Aware接口](III. Core Technologies/7.8.1. Customizing beans using a BeanPostProcessor.md)
+      * [7.8.1. 使用BeanPostProcessor来自定义bean](III. Core Technologies/7.8.1. Customizing beans using a BeanPostProcessor.md)
       * [7.8.2. 使用BeanFactoryPostProcessor自定义配置元数据](III. Core Technologies/7.8.2. Customizing configuration metadata with a BeanFactoryPostProcessor.md)
       * [7.8.3. 使用FactoryBean自定义初始化逻辑](III. Core Technologies/7.8.3. Customizing instantiation logic with a FactoryBean.md)
     * [7.9. 基于声明的容器配置](III. Core Technologies/7.9. Annotation-based container configuration.md)
