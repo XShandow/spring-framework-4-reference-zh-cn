@@ -104,7 +104,7 @@
       * [7.11.3 使用JSR330标准注解的限制](III. Core Technologies/7.11.3. Limitations of JSR-330 standard annotations.md)
     * [7.12. 基于Java的容器配置](III. Core Technologies/7.12. Java-based container configuration.md)
       * [7.12.1 基本含义：@Bean和@Configuration](III. Core Technologies/7.12.1. Basic concepts @Bean and @Configuration.md)
-      * [7.12.2 使用AnnotationConfigApplicationContext初始化spring容器](III. Core Technologies/7.11.2.  @Named and @ManagedBean standard equivalents to the @Component annotation.md)
+      * [7.12.2 使用AnnotationConfigApplicationContext初始化spring容器](III. Core Technologies/7.12.2. Instantiating the Spring container using AnnotationConfigApplicationContext.md)
       * [7.12.3 使用@Bean注解](III. Core Technologies/7.12.3. Using the @Bean annotation.md)
       * [7.12.4 使用@Configuration注解](III. Core Technologies/7.12.4. Using the @Configuration annotation.md)
       * [7.12.5 组合基于Java的配置](III. Core Technologies/7.12.5. Composing Java-based configurations.md)
