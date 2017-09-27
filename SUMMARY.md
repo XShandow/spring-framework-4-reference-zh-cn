@@ -119,7 +119,7 @@
       * [7.15.2 标准和自定义事件](III. Core Technologies/7.15.2. Standard and Custom Events.md)
       * [7.15.3 方便访问低级别的资源](III. Core Technologies/7.15.3. Convenient access to low-level resources.md)
       * [7.15.4 用于web应用的方便的ApplicationContext实例化](III. Core Technologies/7.15.4. Convenient ApplicationContext instantiation for web applications.md)
-      * [7.15.5](III. Core Technologies/7.15.5. Deploying a Spring ApplicationContext as a Java EE RAR file.md)
+      * [7.15.5 使用JavaEE RAR文件部署spring的应用上下文](III. Core Technologies/7.15.5. Deploying a Spring ApplicationContext as a Java EE RAR file.md)
     * [7.16. The BeanFactory](III. Core Technologies/7.16. The BeanFactory.md)
       * [7.16.1 BeanFactory or ApplicationContext?](III. Core Technologies/7.16.1. BeanFactory or ApplicationContext.md)
       * [7.16.2 粘合的代码和错误的单例](III. Core Technologies/7.16.2. Glue code and the evil singleton.md)
