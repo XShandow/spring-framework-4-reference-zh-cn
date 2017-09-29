@@ -140,7 +140,7 @@
       * [8.7.1 构造应用上下文(III. Core Technologies/8.7.1. Constructing application contexts.md)
       * [8.7.2 应用上下文构造器资源路径中的通配符](III. Core Technologies/8.7.2. Wildcards in application context constructor resource paths.md)
       * [8.7.3 FileSystemResource警告](III. Core Technologies/8.7.3. FileSystemResource caveats.md)
-  * [9. Validation, Data Binding, and Type Conversion](III. Core Technologies/7. Validation, Data Binding, and Type Conversion.md)
+  * [9. 验证、数据绑定和类型转换](III. Core Technologies/9. Validation, Data Binding, and Type Conversion.md)
     * [9.1. Introduction](III. Core Technologies/7.1. Introduction.md)
     * [9.2. Validation using Spring’s Validator interface](III. Core Technologies/7.2. Validation using Spring’s Validator interface.md)
     * [9.3. Resolving codes to error messages](III. Core Technologies/7.3. Resolving codes to error messages.md)
